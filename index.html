@@ -3,177 +3,521 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mehdi Golkar Amoli | Remote Sensing & Machine Learning</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Mehdi Golkar Amoli — Remote Sensing Researcher</title>
+<meta name="description" content="Mehdi Golkar Amoli — Remote sensing researcher working on foundation models and parameter-efficient adaptation for Earth observation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0; padding: 0;
-  background-color: #f9f9f9; color: #333;
-}
-header {
-  background: linear-gradient(135deg, #004e92, #000428);
-  color: white; padding: 50px 20px; text-align: center;
-}
-header h1 { font-size: 2.5em; margin-bottom: 10px; }
-header p { font-size: 1.2em; max-width: 700px; margin: auto; }
-nav {
-  background: #222; text-align: center;
-}
-nav a {
-  display: inline-block; padding: 15px 20px; color: white; text-decoration: none;
-}
-nav a:hover { background: #444; }
-section {
-  max-width: 1000px; margin: auto; padding: 40px 20px;
-}
-h2 {
-  color: #004e92; margin-bottom: 20px; font-size: 1.8em; border-bottom: 2px solid #ddd; padding-bottom: 5px;
-}
-.timeline {
-  border-left: 3px solid #004e92; padding-left: 20px;
-}
-.timeline-item { margin-bottom: 20px; }
-.skills-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;
-}
-.skill {
-  background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.projects, .publications {
-  list-style: none; padding: 0;
-}
-.projects li, .publications li {
-  background: white; margin-bottom: 10px; padding: 15px; border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-footer {
-  background: #222; color: white; text-align: center; padding: 20px;
-}
-footer a { color: #00aaff; text-decoration: none; }
+  :root{
+    --bg:#f6f5f0;
+    --surface:#ffffff;
+    --ink:#1b231e;
+    --muted:#5c665f;
+    --rule:#ddd8c8;
+    --accent:#2f6f4f;
+    --accent-dark:#204a35;
+    --accent-soft:#e7efe8;
+    --sand:#a9762f;
+    --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --sans:'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono:'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16.5px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  section{scroll-margin-top:72px;}
+
+  a{color:var(--accent-dark);}
+  a:hover{color:var(--accent);}
+
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+
+  h1,h2,h3{font-family:var(--serif); font-weight:600; color:var(--ink); margin:0;}
+  h2{font-size:1.55em; letter-spacing:-0.01em;}
+  h3{font-size:1.12em; font-weight:600;}
+  p{margin:0 0 1em 0;}
+  .muted{color:var(--muted);}
+
+  /* ---------- nav ---------- */
+  nav.top{
+    position:sticky; top:0; z-index:20;
+    background:rgba(246,245,240,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule);
+  }
+  nav.top .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:14px; padding-bottom:14px;
+  }
+  .brand{font-family:var(--serif); font-weight:600; font-size:1.05em; text-decoration:none; color:var(--ink);}
+  .navlinks{display:flex; gap:22px; flex-wrap:wrap;}
+  .navlinks a{
+    font-size:0.92em; text-decoration:none; color:var(--muted); font-weight:500;
+  }
+  .navlinks a:hover{color:var(--accent-dark);}
+
+  /* ---------- hero ---------- */
+  header.hero{padding:64px 0 40px 0; position:relative; overflow:hidden;}
+  header.hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:radial-gradient(circle, #d8d3c2 1px, transparent 1px);
+    background-size:16px 16px;
+    -webkit-mask-image:linear-gradient(to bottom, black, transparent 70%);
+    mask-image:linear-gradient(to bottom, black, transparent 70%);
+    opacity:0.55;
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    display:grid; grid-template-columns:1.5fr 1fr; gap:44px; align-items:center;
+  }
+  .hero-text .kicker{
+    font-family:var(--mono); font-size:0.8em; color:var(--accent-dark);
+    text-transform:none; letter-spacing:0.01em; margin-bottom:14px; display:block;
+  }
+  .hero-text h1{font-size:2.5em; line-height:1.1; margin-bottom:14px;}
+  .hero-text .tagline{
+    font-family:var(--serif); font-style:italic; font-size:1.18em;
+    color:var(--accent-dark); margin-bottom:18px;
+  }
+  .hero-text .bio{max-width:56ch;}
+  .contact-row{display:flex; flex-wrap:wrap; gap:16px; margin-top:18px; font-size:0.95em;}
+  .contact-row a{text-decoration:none; border-bottom:1px solid var(--rule); padding-bottom:1px;}
+  .contact-row a:hover{border-color:var(--accent);}
+  .hero-photo{position:relative;}
+  .hero-photo img{
+    width:100%; aspect-ratio:4/5; object-fit:cover;
+    border-radius:6px;
+    border:1px solid var(--rule);
+    box-shadow:0 12px 28px -18px rgba(27,35,30,0.45);
+  }
+
+  /* ---------- stats ---------- */
+  .stats-band{background:var(--accent-dark); color:#f2f4ee; padding:34px 0;}
+  .stats-band .label{
+    font-family:var(--mono); font-size:0.82em; color:#c9e2d3; margin-bottom:18px;
+  }
+  .stats-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
+  }
+  .stat .num{font-family:var(--serif); font-size:1.9em; font-weight:600; color:#fff;}
+  .stat .desc{font-size:0.86em; color:#cfe0d5; margin-top:4px; line-height:1.4;}
+
+  /* ---------- sections ---------- */
+  section.block{padding:52px 0;}
+  section.block + section.block{border-top:1px solid var(--rule);}
+  .section-head{margin-bottom:28px;}
+  .section-head p{color:var(--muted); font-size:0.98em; margin-top:6px;}
+
+  /* research focus list */
+  .focus-list{list-style:none; margin:0; padding:0; display:grid; gap:14px;}
+  .focus-list li{
+    display:grid; grid-template-columns:22px 1fr; gap:12px; align-items:baseline;
+  }
+  .focus-list li::before{
+    content:"—"; color:var(--accent); font-family:var(--mono);
+  }
+
+  /* news / timeline */
+  .timeline{display:flex; flex-direction:column;}
+  .timeline-item{
+    display:grid; grid-template-columns:96px 1fr; gap:22px;
+    padding:16px 0; border-top:1px solid var(--rule);
+  }
+  .timeline-item:first-child{border-top:none;}
+  .timeline-item .when{
+    font-family:var(--mono); font-size:0.82em; color:var(--sand); padding-top:2px;
+  }
+  .timeline-item h3{font-size:1.02em; margin-bottom:4px;}
+  .timeline-item p{margin-bottom:0; color:var(--muted); font-size:0.96em;}
+
+  /* publications */
+  .pub-featured{
+    background:var(--surface); border:1px solid var(--rule); border-radius:8px;
+    padding:26px; margin-bottom:30px;
+  }
+  .pub-tag{
+    display:inline-block; font-family:var(--mono); font-size:0.76em;
+    color:var(--accent-dark); background:var(--accent-soft);
+    padding:3px 9px; border-radius:3px; margin-bottom:12px;
+  }
+  .pub-featured h3{font-size:1.24em; line-height:1.35; margin-bottom:8px;}
+  .pub-authors{font-size:0.93em; color:var(--muted); margin-bottom:4px;}
+  .pub-venue{font-size:0.9em; color:var(--muted); font-style:italic; margin-bottom:14px;}
+  .pub-summary{font-size:0.97em; margin-bottom:18px;}
+  .pub-figs{display:grid; grid-template-columns:1fr; gap:14px; margin-bottom:16px;}
+  .pub-figs figure{margin:0;}
+  .pub-figs img{width:100%; display:block; border:1px solid var(--rule); border-radius:4px;}
+  .pub-figs figcaption{font-size:0.8em; color:var(--muted); margin-top:6px;}
+  .pub-links a{font-size:0.92em; margin-right:18px; text-decoration:none; border-bottom:1px solid var(--rule);}
+  .pub-links a:hover{border-color:var(--accent);}
+
+  .pub-item{padding:18px 0; border-top:1px solid var(--rule);}
+  .pub-item h3{font-size:1.03em; margin-bottom:5px;}
+  .pub-item .pub-authors, .pub-item .pub-venue{margin-bottom:3px;}
+  .pub-item .pub-links{margin-top:8px;}
+
+  /* projects */
+  .project{
+    display:grid; grid-template-columns:1fr; gap:16px;
+    padding:24px 0; border-top:1px solid var(--rule);
+  }
+  .project:first-child{border-top:none;}
+  .project.with-image{grid-template-columns:220px 1fr;}
+  .project img{width:100%; border-radius:5px; border:1px solid var(--rule); display:block; object-fit:cover; aspect-ratio:4/3;}
+  .project h3{margin-bottom:6px;}
+  .project .proj-desc{color:var(--muted); font-size:0.96em; margin-bottom:10px;}
+  .project a.try{
+    font-size:0.9em; font-weight:500; text-decoration:none; color:var(--accent-dark);
+    border-bottom:1px solid var(--accent-dark);
+  }
+  .project a.try:hover{color:var(--accent);}
+
+  /* skills */
+  .skill-groups{display:grid; gap:20px;}
+  .skill-group h3{font-size:0.95em; text-transform:none; color:var(--ink); margin-bottom:8px;}
+  .skill-group .tags{color:var(--muted); font-size:0.94em; line-height:1.8;}
+
+  /* referees */
+  .referee{padding:14px 0; border-top:1px solid var(--rule); font-size:0.95em;}
+  .referee:first-child{border-top:none;}
+  .referee .name{font-weight:600;}
+  .referee .role{color:var(--muted); display:block; font-size:0.93em;}
+
+  /* footer */
+  footer{padding:44px 0 60px 0; border-top:1px solid var(--rule);}
+  footer .foot-row{display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px; align-items:center;}
+  footer .links a{margin-right:18px; font-size:0.94em; text-decoration:none; border-bottom:1px solid var(--rule);}
+  footer .links a:hover{border-color:var(--accent);}
+  footer .copy{color:var(--muted); font-size:0.85em; margin-top:22px;}
+
+  @media (max-width:720px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo{order:-1; max-width:220px; margin:0 auto;}
+    .hero-text h1{font-size:2.05em;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+    .project.with-image{grid-template-columns:1fr;}
+    .navlinks{gap:14px;}
+    .timeline-item{grid-template-columns:1fr; gap:4px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Mehdi Golkar Amoli</h1>
-  <p>Remote Sensing Expert | Machine Learning & Deep Learning in Earth Observation</p>
-  <p><a href="mailto:golkaramoli@ut.ac.ir" style="color:#00d4ff;">golkaramoli@ut.ac.ir</a> | <a href="https://www.linkedin.com/in/mehdi-golkar-amoli-48819b156/" style="color:#00d4ff;">LinkedIn</a> | <a href="https://github.com/MehdiGolkarAmoli" style="color:#00d4ff;">GitHub</a></p>
-</header>
-
-<nav>
-  <a href="#about">About</a>
-  <a href="#education">Education</a>
-  <a href="#experience">Experience</a>
-  <a href="#skills">Skills</a>
-  <a href="#publications">Publications</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Mehdi Golkar Amoli</a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Applications</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 </nav>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>I am a Remote Sensing expert with a Master's degree from the University of Tehran, specializing in applying Machine Learning and Deep Learning techniques to Earth observation and computer vision challenges. My work bridges advanced geospatial analysis with AI to produce impactful solutions in agriculture, environmental monitoring, and urban studies.</p>
-</section>
-
-<section id="education">
-  <h2>Education</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>Master of Science, Remote Sensing – University of Tehran (2021–2024)</h3>
-      <p>Thesis: Soil Organic Carbon Estimation Using Remote Sensing Images<br>GPA: 18.75/20 – Ranked 1st</p>
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="kicker">Tehran, Iran</span>
+      <h1>Mehdi Golkar Amoli</h1>
+      <p class="tagline">Remote sensing researcher, working on foundation models for Earth observation</p>
+      <p class="bio">I'm a remote sensing engineer working at the intersection of deep learning, computer vision, and satellite imagery. I hold an MSc in Remote Sensing from the University of Tehran (2024, ranked 1st), and I currently develop deep-learning pipelines for global-scale Earth observation. My recent work adapts large vision foundation models to multispectral satellite data through parameter-efficient fine-tuning — most recently for mapping building footprints worldwide from freely available Sentinel-2 imagery. I'm looking to pursue a PhD extending this direction toward more general, scalable geospatial AI.</p>
+      <div class="contact-row">
+        <a href="mailto:golkaramoli@ut.ac.ir">golkaramoli@ut.ac.ir</a>
+        <a href="https://github.com/MehdiGolkarAmoli" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/mehdi-golkar-amoli-48819b156/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
-    <div class="timeline-item">
-      <h3>Bachelor of Science, Geomatic Engineering – BNUT (2017–2021)</h3>
-      <p>GPA: 18.85/20 – Ranked 1st</p>
+    <div class="hero-photo">
+      <img src="assets/profile.jpg" alt="Portrait of Mehdi Golkar Amoli">
+    </div>
+  </div>
+</header>
+
+<div class="stats-band">
+  <div class="wrap">
+    <div class="label">S12OpenBuilding — current manuscript, under review at IEEE JSTARS</div>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="num">111,000+</div>
+        <div class="desc">Sentinel-2 image / building-mask pairs</div>
+      </div>
+      <div class="stat">
+        <div class="num">1,492</div>
+        <div class="desc">regions across four continents</div>
+      </div>
+      <div class="stat">
+        <div class="num">80.37%</div>
+        <div class="desc">Dice score — new state of the art on the benchmark</div>
+      </div>
+      <div class="stat">
+        <div class="num">&lt;5%</div>
+        <div class="desc">of the frozen encoder's parameters fine-tuned</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Research focus</h2>
+      <p>What I've been working on, and what I want to work on next.</p>
+    </div>
+    <ul class="focus-list">
+      <li>Parameter-efficient adaptation (LoRA, adapters) of large vision and vision-language foundation models to multispectral and hyperspectral satellite imagery.</li>
+      <li>Building world-scale, diverse benchmark datasets for medium-resolution Earth observation, where labeled data is scarce and geographically biased.</li>
+      <li>Dense prediction — semantic segmentation and change detection — from Sentinel-1/2 imagery for buildings, agriculture, and land cover.</li>
+      <li>Turning cloud-native pipelines (Google Earth Engine, PyTorch, GPU serving) into deployed, usable monitoring tools rather than one-off experiments.</li>
+    </ul>
+
+    <div class="section-head" style="margin-top:44px;">
+      <h2>Recent highlights</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="when">2026</div>
+        <div>
+          <h3>Manuscript submitted to IEEE JSTARS</h3>
+          <p>"S12OpenBuilding: Global Building Footprint Mapping via Efficient Adaptation of a DINOv3 Visual Foundation Model to Sentinel-2 Imagery," with Dr. Mahdi Hasanlou and Prof. Danfeng Hong.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">2025</div>
+        <div>
+          <h3>Global building-change monitoring platform</h3>
+          <p>Shipped a cloud-native Sentinel-2 time-series platform combining Google Earth Engine, deep learning segmentation, and temporal consistency analysis.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">2025</div>
+        <div>
+          <h3>Journal paper published</h3>
+          <p>Sentinel-2 SWIR time-series approach to soil organic carbon estimation published in <em>Remote Sensing Applications: Society and Environment</em>.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">2024</div>
+        <div>
+          <h3>MSc completed, ranked 1st</h3>
+          <p>Graduated from the Remote Sensing program at the University of Tehran with a GPA of 18.75/20.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">2024</div>
+        <div>
+          <h3>Journal paper published</h3>
+          <p>PRISMA hyperspectral imagery study for soil organic carbon estimation published in <em>Remote Sensing</em> (MDPI).</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="experience">
-  <h2>Experience</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>Remote Sensing Expert – DBA (2024–Now)</h3>
-      <p>Developing change detection solutions using Sentinel-2 and ML models.</p>
+<section class="block" id="publications">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Publications</h2>
+      <p>One manuscript under review, and two published journal articles.</p>
     </div>
-    <div class="timeline-item">
-      <h3>Researcher – Remote Sensing Lab, University of Tehran (2022–Now)</h3>
-      <p>Super-resolution of satellite images, radiometric calibration site selection.</p>
+
+    <div class="pub-featured">
+      <span class="pub-tag">Under review · IEEE JSTARS · 2026</span>
+      <h3>S12OpenBuilding: Global Building Footprint Mapping via Efficient Adaptation of a DINOv3 Visual Foundation Model to Sentinel-2 Imagery</h3>
+      <div class="pub-authors">Mehdi Golkar Amoli, Mahdi Hasanlou, Danfeng Hong</div>
+      <div class="pub-venue">IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (submitted)</div>
+      <p class="pub-summary">Introduces S12OpenBuilding, a 111,000-sample, 1,492-region global dataset pairing Sentinel-2 imagery with 10 m building masks, together with a parameter-efficient segmentation pipeline. A lightweight multispectral adapter and LoRA adapt a frozen DINOv3 foundation model to 12-band Sentinel-2 input, reaching a Dice score of 80.37% — a new state of the art over CNN, ViT, and other foundation-model baselines — while training under 5% of the encoder's parameters. The model also degrades far more gracefully than fully fine-tuned CNNs when training data is scarce.</p>
+      <div class="pub-figs">
+        <figure>
+          <img src="assets/fig-architecture.png" alt="Diagram of the multispectral adapter, DINOv3 encoder, and UPerNet decoder architecture proposed in the paper">
+          <figcaption>Segmentation pipeline: a multispectral adapter aligns 12-band Sentinel-2 input with a frozen, LoRA-adapted DINOv3 encoder and a UPerNet-style decoder.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/fig-pipeline.png" alt="Workflow diagram showing how the S12OpenBuilding dataset was created from Sentinel-2 imagery and Google Open Buildings labels">
+          <figcaption>S12OpenBuilding construction: Sentinel-2 composites paired with confidence-filtered, downsampled Open Buildings labels, then manually quality-checked.</figcaption>
+        </figure>
+      </div>
+      <div class="pub-links">
+        <a href="https://github.com/MehdiGolkarAmoli" target="_blank" rel="noopener">Code (repository)</a>
+      </div>
     </div>
-    <div class="timeline-item">
-      <h3>Remote Sensing Researcher – GeoSup (2022–2023)</h3>
-      <p>Vehicle detection from UAV imagery using YOLO models.</p>
+
+    <div class="pub-item">
+      <h3>Estimating Soil Organic Carbon Using Time Series Band 11 (SWIR) of Multispectral Sentinel-2 Satellite Images and Machine Learning Algorithms</h3>
+      <div class="pub-authors">Golkar Amoli, M., Hasanlou, M., Taghizadeh-Mehrjardi, R., Samadzadegan, F., Dadrass Javan, F.</div>
+      <div class="pub-venue">Remote Sensing Applications: Society and Environment, 2025</div>
+      <div class="pub-links">
+        <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352938525002897" target="_blank" rel="noopener">View article</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <h3>Exploring the Potential of PRISMA Satellite Hyperspectral Imagery for Estimating Soil Organic Carbon in Marvdasht Region, Southern Iran</h3>
+      <div class="pub-authors">Golkar Amoli, M. et al.</div>
+      <div class="pub-venue">Remote Sensing (MDPI), 2024</div>
+      <div class="pub-links">
+        <a href="https://www.mdpi.com/2072-4292/16/12/2149" target="_blank" rel="noopener">View article</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill">Remote Sensing</div>
-    <div class="skill">Photogrammetry</div>
-    <div class="skill">Python Programming</div>
-    <div class="skill">PyTorch Framework</div>
-    <div class="skill">Torchvision</div>
-    <div class="skill">Google Earth Engine</div>
-    <div class="skill">Deep Learning</div>
-    <div class="skill">Computer Vision</div>
-    <div class="skill">Image Segmentation</div>
-    <div class="skill">Hyperspectral Analysis</div>
-    <div class="skill">MATLAB</div>
-    <div class="skill">Design Patterns (Python)</div>
-    <div class="skill">QGIS</div>
-    <div class="skill">ENVI</div>
-    <div class="skill">SNAP</div>
+<section class="block" id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Applications</h2>
+      <p>Research pipelines I've turned into deployed, usable tools.</p>
+    </div>
+
+    <div class="project with-image">
+      <img src="assets/fig-results.jpg" alt="Sample building segmentation outputs shown in green over satellite imagery for dense urban areas">
+      <div>
+        <h3>Global-scale building change detection</h3>
+        <p class="proj-desc">A cloud-native monitoring platform built on Sentinel-2 time series: cloud-free monthly composites feed a deep-learning building segmentation model, whose outputs are tracked over time with a temporal-consistency check to surface high-confidence building change anywhere in the world.</p>
+        <a class="try" href="https://019bd131-40a5-0f13-d996-7cfa02a92a0f.share.connect.posit.cloud/" target="_blank" rel="noopener">Try the app</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div>
+        <h3>Water Assistant</h3>
+        <p class="proj-desc">An interactive web assistant for water-related questions and analysis, built and deployed independently as a side project.</p>
+        <a class="try" href="https://019ef348-f229-effa-4012-40d943da9497.share.connect.posit.cloud/" target="_blank" rel="noopener">Try the app</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="publications">
-  <h2>Publications</h2>
-  <ul class="publications">
-    <li>
-      <a href="https://www.mdpi.com/2072-4292/16/12/2149" target="_blank">
-        Exploring the Potential of PRISMA Satellite Hyperspectral Image for Estimating Soil Organic Carbon – Remote Sensing, 2024
-      </a>
-    </li>
-    <li>
-      Golkar Amoli, M., Hasanlou, M., Taghizadeh Mehrjardi, R., Samadzadegan, F., Dadrass Javan, F. 
-      <em>Estimating Soil Organic Carbon Using Time Series Band 11 (SWIR) of Multispectral Sentinel-2 Satellite Images and Machine Learning Algorithms</em>, 
-      Remote Sensing Applications: Society and Environment (Accepted, in press).
-      <br>
-      <a href="https://www.sciencedirect.com/journal/remote-sensing-applications-society-and-environment" target="_blank">Journal Link</a>
-    </li>
-  </ul>
+<section class="block" id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="when">2024 – now</div>
+        <div>
+          <h3>Remote Sensing Expert — Dadeh Pardazan Bonyan Ava (DBA), Tehran</h3>
+          <p>Develop end-to-end remote sensing solutions in the geospatial data team, including a farmland change-detection pipeline on Sentinel-2 imagery. Fine-tune vision foundation and vision-language models, with hands-on experience on H100 GPU servers.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">2022 – now</div>
+        <div>
+          <h3>Researcher — Remote Sensing Lab, University of Tehran</h3>
+          <p>MSc research on soil organic carbon estimation under Dr. Mahdi Hasanlou. Built a Google Earth Engine algorithm for radiometric/geometric VHR calibration-site selection, and contributed to a hyperspectral mineral-exploration project.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">2022 – 2023</div>
+        <div>
+          <h3>Remote Sensing &amp; Photogrammetry Researcher — GeoSup, Tehran</h3>
+          <p>Vehicle and pedestrian detection from drone imagery with YOLOv7/YOLOv8, and internal calibration of multispectral cameras.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">2022</div>
+        <div>
+          <h3>Remote Sensing Expert — Smart Farm Project, BNUT</h3>
+          <p>Built a Google Earth Engine machine-learning pipeline for rice-field time-series classification, later carried forward by a precision-agriculture startup.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <ul class="projects">
-    <li>
-      End-to-end building change detection application using Sentinel-2 and Deep Learning.
-    </li>
-    <li>
-      Rice field classification in northern Iran using time-series Sentinel-2 imagery.
-    </li>
-    <li>
-      Sentinel-2 based change detection web application:
-      <a href="https://01975364-aa50-a99d-e2e6-741fe3760f53.share.connect.posit.cloud/" target="_blank">
-        View App
-      </a>
-    </li>
-  </ul>
+<section class="block" id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Education</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="when">2021 – 2024</div>
+        <div>
+          <h3>MSc, Remote Sensing — University of Tehran</h3>
+          <p>GPA 18.75/20, ranked 1st. Thesis: <em>Soil Organic Carbon Estimation Using Remote Sensing Images</em>, advised by Dr. Mahdi Hasanlou and Prof. Farhad Samadzadegan.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">2017 – 2021</div>
+        <div>
+          <h3>BSc, Geomatics Engineering — Babol Noshirvani University of Technology</h3>
+          <p>GPA 18.85/20, ranked 1st. Admitted through Iran's "Brilliant Talents" quota — direct admission, without an entrance exam — to the University of Tehran and K. N. Toosi University.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:44px;">
+      <h2>Skills</h2>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>Deep learning &amp; foundation models</h3>
+        <div class="tags">PyTorch · Vision Transformers · DINOv3 · LoRA / PEFT · vision-language models · RAG · YOLOv7/v8 · semantic segmentation</div>
+      </div>
+      <div class="skill-group">
+        <h3>Remote sensing &amp; GIS</h3>
+        <div class="tags">Google Earth Engine · ENVI · QGIS · SNAP · GDAL · hyperspectral &amp; multispectral analysis · photogrammetry</div>
+      </div>
+      <div class="skill-group">
+        <h3>Engineering</h3>
+        <div class="tags">Python · MATLAB · Linux · Docker · high-performance GPU computing (H100)</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:golkaramoli@ut.ac.ir">golkaramoli@ut.ac.ir</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/mehdi-golkar-amoli-48819b156/">linkedin.com/in/mehdi-golkar-amoli</a></p>
-  <p>GitHub: <a href="https://github.com/MehdiGolkarAmoli">github.com/MehdiGolkarAmoli</a></p>
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Referees</h2>
+    </div>
+    <div class="referee">
+      <span class="name">Dr. Mahdi Hasanlou</span>
+      <span class="role">Associate Professor &amp; Dean, School of Surveying and Geospatial Engineering, University of Tehran — hasanlou@ut.ac.ir</span>
+    </div>
+    <div class="referee">
+      <span class="name">Dr. Ebadat Ghanbari Parmehr</span>
+      <span class="role">Assistant Professor, Babol Noshirvani University of Technology — parmehr@nit.ac.ir</span>
+    </div>
+    <div class="referee">
+      <span class="name">Dr. Farzaneh Dadras Javan</span>
+      <span class="role">Assistant Professor, University of Twente (ITC) — f.dadrassjavan@utwente.nl</span>
+    </div>
+  </div>
 </section>
 
 <footer>
-  <p>© 2025 Mehdi Golkar Amoli | Designed for Academic Opportunities</p>
+  <div class="wrap">
+    <div class="foot-row">
+      <div class="links">
+        <a href="mailto:golkaramoli@ut.ac.ir">golkaramoli@ut.ac.ir</a>
+        <a href="https://github.com/MehdiGolkarAmoli" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/mehdi-golkar-amoli-48819b156/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="muted" style="font-size:0.9em;">Tehran, Iran</div>
+    </div>
+    <div class="copy">© 2026 Mehdi Golkar Amoli</div>
+  </div>
 </footer>
 
 </body>
