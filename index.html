@@ -247,7 +247,7 @@
       </div>
     </div>
     <div class="hero-photo">
-      <img src="assets/profile.jpg" alt="Portrait of Mehdi Golkar Amoli">
+      <img src="profile.jpg" alt="Portrait of Mehdi Golkar Amoli">
     </div>
   </div>
 </header>
@@ -347,11 +347,11 @@
       <p class="pub-summary">Introduces S12OpenBuilding, a 111,000-sample, 1,492-region global dataset pairing Sentinel-2 imagery with 10 m building masks, together with a parameter-efficient segmentation pipeline. A lightweight multispectral adapter and LoRA adapt a frozen DINOv3 foundation model to 12-band Sentinel-2 input, reaching a Dice score of 80.37% — a new state of the art over CNN, ViT, and other foundation-model baselines — while training under 5% of the encoder's parameters. The model also degrades far more gracefully than fully fine-tuned CNNs when training data is scarce.</p>
       <div class="pub-figs">
         <figure>
-          <img src="assets/fig-architecture.png" alt="Diagram of the multispectral adapter, DINOv3 encoder, and UPerNet decoder architecture proposed in the paper">
+          <img src="fig-architecture.png" alt="Diagram of the multispectral adapter, DINOv3 encoder, and UPerNet decoder architecture proposed in the paper">
           <figcaption>Segmentation pipeline: a multispectral adapter aligns 12-band Sentinel-2 input with a frozen, LoRA-adapted DINOv3 encoder and a UPerNet-style decoder.</figcaption>
         </figure>
         <figure>
-          <img src="assets/fig-pipeline.png" alt="Workflow diagram showing how the S12OpenBuilding dataset was created from Sentinel-2 imagery and Google Open Buildings labels">
+          <img src="fig-pipeline.png" alt="Workflow diagram showing how the S12OpenBuilding dataset was created from Sentinel-2 imagery and Google Open Buildings labels">
           <figcaption>S12OpenBuilding construction: Sentinel-2 composites paired with confidence-filtered, downsampled Open Buildings labels, then manually quality-checked.</figcaption>
         </figure>
       </div>
@@ -388,7 +388,7 @@
     </div>
 
     <div class="project with-image">
-      <img src="assets/fig-results.jpg" alt="Sample building segmentation outputs shown in green over satellite imagery for dense urban areas">
+      <img src="fig-results.jpg" alt="Sample building segmentation outputs shown in green over satellite imagery for dense urban areas">
       <div>
         <h3>Global-scale building change detection</h3>
         <p class="proj-desc">A cloud-native monitoring platform built on Sentinel-2 time series: cloud-free monthly composites feed a deep-learning building segmentation model, whose outputs are tracked over time with a temporal-consistency check to surface high-confidence building change anywhere in the world.</p>
