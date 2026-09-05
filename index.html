@@ -167,6 +167,10 @@
   .pub-item h3{font-size:1.03em; margin-bottom:5px;}
   .pub-item .pub-authors, .pub-item .pub-venue{margin-bottom:3px;}
   .pub-item .pub-links{margin-top:8px;}
+  .pub-item.with-image{display:grid; grid-template-columns:220px 1fr; gap:22px; align-items:start;}
+  .pub-item.with-image img{width:100%; display:block; border:1px solid var(--rule); border-radius:4px;}
+  .pub-item.with-image figure{margin:0;}
+  .pub-item.with-image figcaption{font-size:0.8em; color:var(--muted); margin-top:6px;}
 
   /* projects */
   .project{
@@ -208,6 +212,7 @@
     .hero-text h1{font-size:2.05em;}
     .stats-grid{grid-template-columns:repeat(2,1fr);}
     .project.with-image{grid-template-columns:1fr;}
+    .pub-item.with-image{grid-template-columns:1fr;}
     .navlinks{gap:14px;}
     .timeline-item{grid-template-columns:1fr; gap:4px;}
   }
@@ -360,21 +365,33 @@
       </div>
     </div>
 
-    <div class="pub-item">
-      <h3>Estimating Soil Organic Carbon Using Time Series Band 11 (SWIR) of Multispectral Sentinel-2 Satellite Images and Machine Learning Algorithms</h3>
-      <div class="pub-authors">Golkar Amoli, M., Hasanlou, M., Taghizadeh-Mehrjardi, R., Samadzadegan, F., Dadrass Javan, F.</div>
-      <div class="pub-venue">Remote Sensing Applications: Society and Environment, 2025</div>
-      <div class="pub-links">
-        <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352938525002897" target="_blank" rel="noopener">View article</a>
+    <div class="pub-item with-image">
+      <figure>
+        <img src="Sentinel-2SOC.png" alt="Sentinel-2 base pipeline for soil organic carbon estimation">
+        <figcaption>Sentinel-2 base</figcaption>
+      </figure>
+      <div>
+        <h3>Estimating Soil Organic Carbon Using Time Series Band 11 (SWIR) of Multispectral Sentinel-2 Satellite Images and Machine Learning Algorithms</h3>
+        <div class="pub-authors">Golkar Amoli, M., Hasanlou, M., Taghizadeh-Mehrjardi, R., Samadzadegan, F., Dadrass Javan, F.</div>
+        <div class="pub-venue">Remote Sensing Applications: Society and Environment, 2025</div>
+        <div class="pub-links">
+          <a href="https://www.sciencedirect.com/science/article/abs/pii/S2352938525002897" target="_blank" rel="noopener">View article</a>
+        </div>
       </div>
     </div>
 
-    <div class="pub-item">
-      <h3>Exploring the Potential of PRISMA Satellite Hyperspectral Imagery for Estimating Soil Organic Carbon in Marvdasht Region, Southern Iran</h3>
-      <div class="pub-authors">Golkar Amoli, M. et al.</div>
-      <div class="pub-venue">Remote Sensing (MDPI), 2024</div>
-      <div class="pub-links">
-        <a href="https://www.mdpi.com/2072-4292/16/12/2149" target="_blank" rel="noopener">View article</a>
+    <div class="pub-item with-image">
+      <figure>
+        <img src="PRISMA-SOC.jpg" alt="PRISMA base pipeline for soil organic carbon estimation">
+        <figcaption>PRISMA-base</figcaption>
+      </figure>
+      <div>
+        <h3>Exploring the Potential of PRISMA Satellite Hyperspectral Imagery for Estimating Soil Organic Carbon in Marvdasht Region, Southern Iran</h3>
+        <div class="pub-authors">Golkar Amoli, M. et al.</div>
+        <div class="pub-venue">Remote Sensing (MDPI), 2024</div>
+        <div class="pub-links">
+          <a href="https://www.mdpi.com/2072-4292/16/12/2149" target="_blank" rel="noopener">View article</a>
+        </div>
       </div>
     </div>
   </div>
